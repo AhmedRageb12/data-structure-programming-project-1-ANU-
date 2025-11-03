@@ -11,12 +11,10 @@ public class Main {
         System.out.println("4# sum all numbers in an array list");
         System.out.println("5# remove duplicate numbers in an array list");
         System.out.println("6# Remove an elemnet in an arraylist");
-
         int number = scanner.nextInt();
         switch (number) {
             case 1: Algo1() ;break;
             case 2:Algo2();break;
-
             case 3:Algo3();break;
             case 4:Algo4();break;
             case 5:Algo5();break;
@@ -27,7 +25,6 @@ public class Main {
 
     }
     public static void Algo1(){
-        //input
         int sum = 0;
         int x[] = inputArray();
         for(int i = 0; i < x.length; i++){
@@ -109,17 +106,12 @@ public class Main {
         ArrayList<Integer> list = inputArrayList();
         ArrayList<Integer> result = new ArrayList<>();
 
-        if (!list.isEmpty()) {
-            result.add(list.get(0)); // Add first element
-
-            for (int i = 0; i < list.size() - 1; i++) {
-                if (!list.get(i).equals(list.get(i + 1))) {
-                    result.add(list.get(i + 1));
-                }
+        for (Integer num : list) {
+            if (!result.contains(num)) {
+                result.add(num);
             }
         }
 
-        // Print results
         System.out.print("Input: [ ");
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i));
@@ -143,21 +135,12 @@ public class Main {
         System.out.println("Now Enter the element to be removed");
         Scanner scanner = new Scanner(System.in);
         int y = scanner.nextInt();
-
-        int forbidden = 0;
-        for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == y) {
-                forbidden++;
-            }
-        }
-
         ArrayList<Integer> result = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) != y) {
                 result.add(list.get(i));
             }
         }
-
         System.out.println("Input ");
         System.out.print("[ ");
         for (int i = 0; i < list.size(); i++) {
@@ -167,7 +150,6 @@ public class Main {
             }
         }
         System.out.println(" ]");
-
         System.out.println("Output ");
         System.out.print("[ ");
         for (int i = 0; i < result.size(); i++) {
